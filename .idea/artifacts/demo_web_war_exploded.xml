@@ -6,6 +6,7 @@
         <element id="directory" name="classes">
           <element id="module-output" name="demo-web" />
           <element id="module-output" name="demo-parents" />
+          <element id="module-output" name="demo-config" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.2.1.RELEASE" />

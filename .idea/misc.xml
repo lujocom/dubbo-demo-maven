@@ -4,6 +4,7 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/demo-config" />
     <file type="web" url="file://$PROJECT_DIR$/demo-web" />
   </component>
   <component name="MavenProjectsManager">
@@ -11,6 +12,7 @@
       <list>
         <option value="$PROJECT_DIR$/demo-web/pom.xml" />
         <option value="$PROJECT_DIR$/demo-parents/pom.xml" />
+        <option value="$PROJECT_DIR$/demo-config/pom.xml" />
       </list>
     </option>
   </component>

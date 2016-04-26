@@ -19,6 +19,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="demo-config" target="1.6" />
       <module name="demo-parents" target="1.6" />
       <module name="demo-web" target="1.6" />
     </bytecodeTargetLevel>
