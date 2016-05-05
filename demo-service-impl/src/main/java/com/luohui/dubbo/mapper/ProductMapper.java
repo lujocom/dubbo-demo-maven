@@ -1,10 +1,11 @@
 package com.luohui.dubbo.mapper;
 
-import com.luohui.dubbo.po.Product;
 import com.luohui.dubbo.po.ProductExample;
-import java.util.List;
+import com.luohui.dubbo.po.Product;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface ProductMapper {

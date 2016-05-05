@@ -1,11 +1,16 @@
 package com.luohui.dubbo.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.luohui.dubbo.api.ProductService;
 import com.luohui.dubbo.common.BaseController;
-import com.luohui.dubbo.service.ProductService;
+import com.luohui.dubbo.po.Product;
+import com.luohui.dubbo.service.ProductBiz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 /**
  * <dl>
@@ -23,7 +28,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class TestController extends BaseController {
 
     @Autowired
-    private ProductService productService;
+   private ProductBiz productBiz;
 
     @RequestMapping("/hello")
     public ModelAndView getHello(){
@@ -33,7 +38,9 @@ public class TestController extends BaseController {
         logger.info("这是一个测试---info");
         logger.error("这是一个测试---error");
         mv.addObject("ceshi", "hello, world");
-        mv.addAllObjects(productService.getAllProduct());
+        List<Product> allProduct = productBiz.getProduct();
+        mv.addObject("product", allProduct);
+
         return mv;
     }
 

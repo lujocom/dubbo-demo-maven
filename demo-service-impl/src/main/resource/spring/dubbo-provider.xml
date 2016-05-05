@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+		 http://code.alibabatech.com/schema/dubbo
+		 http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="demo-service-impl"/>
+    <dubbo:registry  address="${dubbo.registry.address}"/>
+    <dubbo:protocol name="dubbo" port="20880" />
+    <dubbo:monitor protocol="registry"/>
+    <dubbo:provider timeout="10000" threadpool="fixed" threads="100" accepts="10000" />
+
+    <!--<dubbo:protocol name="dubbo" serialization="kryo" optimizer="com.luohui.dubbo.common.SerializationOptimizerImpl"/>-->
+    <!--<dubbo:protocol name="rest" port="8888" threads="500" contextpath="services" server="tomcat" accepts="500"
+                    extension="com.luohui.dubbo.extension.TraceInterceptor,
+                    com.luohui.dubbo.extension.TraceFilter,
+                    com.luohui.dubbo.extension.ClientTraceFilter,
+                    com.luohui.dubbo.extension.DynamicTraceBinding,
+                    com.luohui.dubbo.extension.CustomExceptionMapper,
+                    com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter"/>
+
+    <dubbo:protocol name="http" port="8889"/>
+    <dubbo:protocol name="hessian" port="8890"/>
+    <dubbo:protocol name="webservice" port="8892"/>-->
+
+    <dubbo:service interface="com.luohui.dubbo.api.ProductService" ref="productService"/>
+    <bean id="productService" class="com.luohui.dubbo.service.ProductServiceImpl"/>
+
+</beans>

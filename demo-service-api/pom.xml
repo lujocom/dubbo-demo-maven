@@ -1,0 +1,58 @@
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.luohui.dubbo</groupId>
+        <artifactId>demo-parents</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../demo-parents</relativePath>
+    </parent>
+    <groupId>com.luohui.dubbo</groupId>
+    <artifactId>demo-service-api</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <name>demo-service-api Tapestry 5 Application</name>
+    <dependencies>
+        <dependency>
+            <groupId>com.luohui.dubbo</groupId>
+            <artifactId>demo-config</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>2.0</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>demo-service-api</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <optimize>true</optimize>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.7.2</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <tapestry.execution-mode>Qa</tapestry.execution-mode>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+
+
+        </plugins>
+    </build>
+
+    <reporting/>
+
+</project>
